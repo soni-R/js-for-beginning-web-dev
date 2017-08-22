@@ -1,39 +1,44 @@
-// console.log is used for debugging purposes
+//Global variables
 
-var name ='sam';
-console.log(name);
+var name ='Benny',
+	age = 30,
+	money = 6.67,
+	availableToday = false,
+	haircolor,  //hairColor is undefined bcoz no value is defined to it.
+	gender = null,
+	nameAgain=name; //we can assign a variable name as value to another variable;
 
-var p = confirm('Are you sure');
-console.log(p);
 
-var number1 = 5,
-number2 = 10;
-result = number1 + number2;
+// in console
+// name
+// "Benny"
 
-console.log(result);
+// age
+// "30"  // if age is assigned as string value
 
-// we can manipulate variables, create variables in console.
-/* experiment in console
- sam
- app.js:5 true
- 
- number1 - number2;
- -5
+// parseInt(age) // converts to int type and display
+// 30
 
- number1 + ' ' +number2
-"5 10"
+// age
+// 30
 
- number1 = 10
- 10
- number1 + number2
- 20
+// money
+// 6.67
 
- name = "john"  //assigning a new value to a variable in console, which does not effect the main program, stays as is after refresh
- "john"
+// parseFloat(money)
+// 6.67
 
- name
- "john"
+// parseInt(money)
+// 6
 
- name +' is '+ number2;
- "john is 10"  */
- 
+// availableToday
+// false
+
+// haircolor
+// undefined
+
+// gender
+// null
+
+// nameAgain
+// "Benny"
