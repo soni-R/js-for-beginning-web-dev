@@ -1,43 +1,62 @@
-var name='Mark',
-age = 30,
- // availableToday = false;
+var number1 = 16,
+    number2 = 5,
+    number3 = 2
+	result = number1 + number2; // we can use all mathematical operators(+, -, *, /, %) in place of +.
+	console.log(result);
 
-/*  Logical Operators
-	&& 	and 		
-	|| 	or 	
-	! 	not
-*/
+	result = (number1 + number2) / number3;
+
+	result = number1 % number2; // % results remainder
+	console.log(result); // outputs 1
+
+
+	// Increment and Decrement
+
+var number = 1;
+	 result = number++; //outputs 1
+	 console.log(result);
+
+var num =1;
+	 result = ++num; // outputs 2
+	 console.log(result);
+
+var num2 = 1;
+	 result = num2--; // outputs 1
+	 console.log(result);
+
+var num3 = 1;
+	 result = --num3; // outputs 0
+	 console.log(result);
+
+
+var value = 1;
+	value= value + 1;  // same as ++value
+	console.log(value);
+
+var negvalue = -10;
 
 //in console
-// !true
-// false
-// !false
-// true
-// name == 'mark' && age == 30
-// false
-// name == 'Mark' && age == 30
-// true
-// name == 'Mark' && age == '30'
-// true
-// name === 'Mark' && age === '30';
-// false
-//  name === 'Mark' && age === 30;
-// true
-// name == 'Mark' || age === '30';
-// true
-// name == 'Mark' || age === '27';
-// true
+// number
+// 2
+// -number
+// -2
 
-// (name === 'Mark' && age === 24) && availableToday;
-// false
+// negvalue
+// -10
+// -negvalue  //negation
+// 10
 
-// name === 'Mark' && !availableToday
-// true
+var value2 ='20'; //value2 is a string types
 
- availableToday = true;
+// value2
+// "20"
+// +value2 // +value2 converts string type value into integer
+// 20
 
-//  name === 'Mark' && !availableToday
-// false
+var value3 = 'Alex'; // string type
 
-// name === 'Mark' && availableToday
-// true
+// output in console
+// value3
+// "Alex"
+// +value3 //  +value3 results NaN since value3 has string in it 
+// NaN
