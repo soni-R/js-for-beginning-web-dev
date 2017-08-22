@@ -1,44 +1,41 @@
-//Global variables
+var number1 = 10,
+number2 = 50,
+result; // typeof result is undefined since we hasn't had a value set to it
+// Note: undefined is different from not defined, undefined means no value is assigned, not defined means the specified variable is not exist in code.
 
-var name ='Benny',
-	age = 30,
-	money = 6.67,
-	availableToday = false,
-	haircolor,  //hairColor is undefined bcoz no value is defined to it.
-	gender = null,
-	nameAgain=name; //we can assign a variable name as value to another variable;
+/* output in console
+typeof result
+"undefined"
+typeof number1
+"number" */
 
+if(typeof result === 'undefined') // === this not only checks the value for equal but also checks the type of a variable
+{
+	result = number1 + number2;
+}
 
-// in console
-// name
-// "Benny"
+//NaN(not a number)
+var result2 = 'Alex';
+// result2/2
+// NaN
+// parseInt(result2)
+// NaN
+// output in console is NaN, for result2/2, since result2 is string type
 
-// age
-// "30"  // if age is assigned as string value
+var result3 = '0Alex2';
+//parseInt(result3)
+//0    - gives what ever value available first
 
-// parseInt(age) // converts to int type and display
-// 30
+//The isNaN() function determines whether a value is not a number or a number
+if(isNaN(result2 / 2)){
+	console.log("not a number");
+}
 
-// age
-// 30
+num = 'a';
+result = num + number1;
+// result
+// "a10"
 
-// money
-// 6.67
-
-// parseFloat(money)
-// 6.67
-
-// parseInt(money)
-// 6
-
-// availableToday
-// false
-
-// haircolor
-// undefined
-
-// gender
-// null
-
-// nameAgain
-// "Benny"
+result = parseInt(number1) + parseInt(num); // results NaN since num is string type.
+// result
+// NaN
