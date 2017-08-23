@@ -1,49 +1,92 @@
-var name = 'Alex';
+ var name = 'Alex',
+ age = 30;
 
-/* In console
- - finding length of a string
-name
-"Alex"
-name.length
-4
+// window.name //window will have our defined variables and functions too
+// "Alex"
+// window.age
+// 30
 
- - finding character at specified position(index)
-name.charAt(0);
-"A"
-name.charAt(5)
-""
-name.charAt(2)
-"e"
+var app = {
+	version : 1.0,
+	name : 'Brilliant app',
+	getVersion : function() {
+		//return app.version;
+		return this.version;
+	}
+	
+};
 
-name.search('A') //returns the index value(position) of the specified character
-0
-name.search('e')
-2
-name.search('s') // since 's' is not there in the given name, it returns -1
--1
-name.search('a') // since 'a' is small, we have to provide 'A' , .search is a case sensitive
--1
-
- - we can try the following in console
-'Alex'.length
-4
-'Alex'.search('A')
-0
-['Alex', 'Billy', 'Dale'].length
-3 
-*/
+/*return app.version; // instead of app.version it is better to use this.version or whatever property it is , bcoz if we change the object name app to
+		someother name then app.version will not work  */
 
 
-// creating object
- var app = {};
+/* creating objects and properties
 
-/* output in console
+ var app = {
+	
+ };
+
+app.version = 1.0;   // defined the version property to app object and assigned value '1.0' to it.
+
+- This is fine, but however we can define version property with in app object
+
+- output in console
+ app
+ {version: 1}  // we got version property with in app object */
+
+
+/*
+var app = {
+	version : 1.0,
+	name : 'Brilliant app'
+};
+
+function getVersion(){ 		// this function can be written with in the app object as shown above
+	return app.version;
+} 
+
+- in console
 app
-{}
-app.name = "javascript" //defining a variable 'name' and assigning a value 'javascript' to the object
-"javascript"
-app
-{name: "javascript"} // object with property(variable) 'name' and string 'javascript'
-app.name.length // accessing object properties - (name.length)returns length of the value(string)
-10
-*/
+{version: 1, name: "Brilliant app"}
+app.version
+1
+app.name
+"Brilliant app" */
+
+// window.app
+// Object {version: 1, name: "Brilliant app"} // this is our object
+
+// version
+// VM244:1 Uncaught ReferenceError: version is not defined // we cannot simply give version in console it returns undefined, since it is in app object we have to specify like app.version
+//     at <anonymous>:1:1
+// (anonymous) @ VM244:1
+
+// app.version // correct way
+// 1
+
+
+/* calling function in console
+
+getVersion
+function getVersion(){
+	return app.version;
+}
+getVersion() // calling function
+1 */
+
+//other way to define a function
+var getName = function(){
+	return app.name;
+} 
+
+/* in console
+getName
+function (){
+	return app.name;
+}
+window.getName
+function (){
+	return app.name;
+}
+window.getName()
+"Brilliant app"  */
