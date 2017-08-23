@@ -1,24 +1,49 @@
-var names = ['Alex', 'Billy', 'Dale', 'ally'];
+//var name = 'Alex';
+
+/* In console
+ - finding length of a string
+name
+"Alex"
+name.length
+4
+
+ - finding character at specified position(index)
+name.charAt(0);
+"A"
+name.charAt(5)
+""
+name.charAt(2)
+"e"
+
+name.search('A') //returns the index value(position) of the specified character
+0
+name.search('e')
+2
+name.search('s') // since 's' is not there in the given name, it returns -1
+-1
+name.search('a') // since 'a' is small, we have to provide 'A' , .search is a case sensitive
+-1
+
+ - we can try the following in console
+'Alex'.length
+4
+'Alex'.search('A')
+0
+['Alex', 'Billy', 'Dale'].length
+3 
+*/
 
 
-//This loop may not returns the result in index order
-/* for(name in names)
-{
-	console.log(names[name]);
-} */
+// creating object
+ var app = {};
 
-
-//This for loop certainly returns the result in order
-for(var x = 0; x <= 2; x=x+1){ //in place of x=x+1 we can use x++
-	//here x<=2 is not dynamic, for eg if we have one more element in array at index 3, that will not be displayed
-	console.log(names[x]);
-}
-
-// output in console
-//  Alex
-//  Billy
-//  Dale // 'ally' is not displayed bcoz of x <= 2 therefore we have to use (x <= names.length-1) this gets the array elements dynamically.
-
-for(var x = 0; x <= names.length-1; x=x+1){ // or in place of (x <= names.length-1) we can use x < names.length.
-	console.log(names[x]);
-}
+/* output in console
+app
+{}
+app.name = "javascript" //defining a variable 'name' and assigning a value 'javascript' to the object
+"javascript"
+app
+{name: "javascript"} // object with property(variable) 'name' and string 'javascript'
+app.name.length // accessing object properties - (name.length)returns length of the value(string)
+10
+*/
