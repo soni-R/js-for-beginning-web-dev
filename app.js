@@ -1,4 +1,4 @@
-//var name = 'Alex';
+var name = 'Alex';
 
 /* In console
  - finding length of a string
