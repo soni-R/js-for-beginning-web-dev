@@ -1,53 +1,18 @@
 var app = {};
+ 
+ app.add = function(numbers, callback){
+ 	var result = 0;
 
-app.countdown = function(settings){
-	var interval,
-		counter = 0,
+ 	if(numbers !== undefined && numbers.length){
+ 		for(number in numbers){
+ 			//console.log(numbers[number]);
+ 			result = result + numbers[number];
 
-		//start and end points
-		startAt = 0,
-		endAt = 0;
+ 		}
+ 		//console.log(result);
 
-	if(settings === undefined)
-	{
-		console.log('Please provide settings');
-	}	
-	else
-	{
-		if(settings.startAt === undefined || settings.endAt === undefined)
-		{
-			console.log('start and end numbers are required');
-		}
-		else
-		{
-			startAt = parseInt(settings.startAt, 10);
-			endAt = parseInt(settings.endAt, 10);
-
-			if(!isNaN(startAt) && !isNaN(endAt))
-			{
-				counter = startAt;
-
-				interval = setInterval(function(){
-
-					if(counter < endAt) 
-					{
-
-						counter = 0;
-						startAt = 0;
-						endAt = 0;
-
-						console.log('Finished');
-						clearInterval(interval);
-					}
-					else
-					{
-						console.log(counter);
-					}
-					
-					counter = counter - 1;
-					
-				}, 1000);
-			}
-		}
-	}
-};
+ 		if(callback !== undefined){
+ 			callback(result);
+ 		}
+ 	}
+ };
