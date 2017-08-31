@@ -5,13 +5,72 @@
 	</head>
 	<body>
 		
-		<script src="app.js"></script>
-		
+		<a href="http://www.google.com" id="link">I'm a link</a>
+
 		<script>
-			app.countdown({startAt:3, endAt:1}, function(){
-				console.log('The countdown has finished!');
-			});
+			var element = document.getElementById('link');
+		
 		</script>
 
 	</body>
 </html>
+
+
+<!--  in console
+
+document 	//document contains markup and methods
+#document<!DOCTYPE html><html>​<head>​…​</head>​<title>​JavaScript​</title>​</head>​<body>​<a href=​"http:​/​/​www.google.com" id=​"link">​I'm a link​</a>​<script>​
+			var element = document.getElementById('link');
+			</script>​</body>​</html>​
+
+element
+<a href=​"http:​/​/​www.google.com" id=​"link">​I'm a link​</a>​ 
+
+element.text  	// returns text of an element
+"I'm a link"
+
+element.text.length 	// returns length of the text
+10 
+
+element.innerText 	// returns text in a link tag
+"I'm a link"
+
+element.innerText = 'click me'	//.innertext property will change the text in a link tag, to the specified text in quotes
+"click me"
+
+element.innerHTML = '<strong>click me</strong>' 	// makes the text bold
+"<strong>click me</strong>"
+
+element.remove();	// remove() method removes specified element from page
+undefined 
+
+link = element.getAttribute('href');	// returns string value of  attribute href and assigns to variable link
+"http://www.google.com"
+
+link.length
+21
+
+window.location = link // which redirects to the link 
+
+element.hasAttribute('rel')		//checks if the element has the specified attribute
+false
+element.hasAttribute('href')
+true 
+
+element.removeAttribute('href') //removes the attribute href
+undefined 
+
+element.offsetTop // returns margin space of element
+8
+element.offsetLeft
+8 
+element.offsetLeft
+28
+
+element.offsetParent
+<body>​…​</body>​
+
+element.offsetParent.offsetTop 	//nesting properties
+0
+element.offsetParent.offsetLeft
+0-->
