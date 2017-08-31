@@ -5,10 +5,40 @@
 	</head>
 	<body>
 		
-		<a href="http://www.google.com" id="link">I'm a link</a>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="about.html">About us</a></li>
+				<li><a href="contact.html">contact us</a></li>
+			</ul>
+		</nav>
 
 		<script>
-			var element = document.getElementById('link');
+			//var element = document.querySelector('nav ul li a');
+			//var element = document.querySelectorAll('nav ul li a');
+
+			var navigation = document.querySelectorAll('nav ul li a'),
+			navigationLength = navigation.length;
+
+			/*
+			if(navigation.length){
+				for(item in navigation){
+					//console.log(navigation[item]);
+					var i = navigation[item];
+					//console.log(i.text + ' - ' + i.getAttribute('href'));
+					console.log(i);
+				}
+			}*/
+
+			//using below for loop is the correct way of iterate over the items
+
+			if(navigationLength){
+				for(var x = 0; x < navigationLength; x=x+1){
+					var i = navigation[x];
+					console.log(i.text + ' - ' + i.getAttribute('href'));
+					
+				}
+			}	
 		
 		</script>
 
@@ -16,61 +46,22 @@
 </html>
 
 
-<!--  in console
-
-document 	//document contains markup and methods
-#document<!DOCTYPE html><html>​<head>​…​</head>​<title>​JavaScript​</title>​</head>​<body>​<a href=​"http:​/​/​www.google.com" id=​"link">​I'm a link​</a>​<script>​
-			var element = document.getElementById('link');
-			</script>​</body>​</html>​
-
+<!-- in console
+	//First anchor tag is selected , using query selector
 element
-<a href=​"http:​/​/​www.google.com" id=​"link">​I'm a link​</a>​ 
+<a href=​"#">​Home​</a>​ 
 
-element.text  	// returns text of an element
-"I'm a link"
+element.text
+"Home"
 
-element.text.length 	// returns length of the text
-10 
+element.innerText = 'Homepage'
+"Homepage"
 
-element.innerText 	// returns text in a link tag
-"I'm a link"
+element 	//using querySelectorAll, all anchor tags are selected
+(3) [a, a, a]
 
-element.innerText = 'click me'	//.innertext property will change the text in a link tag, to the specified text in quotes
-"click me"
+element.length 	//returns number of items
+3
 
-element.innerHTML = '<strong>click me</strong>' 	// makes the text bold
-"<strong>click me</strong>"
-
-element.remove();	// remove() method removes specified element from page
-undefined 
-
-link = element.getAttribute('href');	// returns string value of  attribute href and assigns to variable link
-"http://www.google.com"
-
-link.length
-21
-
-window.location = link // which redirects to the link 
-
-element.hasAttribute('rel')		//checks if the element has the specified attribute
-false
-element.hasAttribute('href')
-true 
-
-element.removeAttribute('href') //removes the attribute href
-undefined 
-
-element.offsetTop // returns margin space of element
-8
-element.offsetLeft
-8 
-element.offsetLeft
-28
-
-element.offsetParent
-<body>​…​</body>​
-
-element.offsetParent.offsetTop 	//nesting properties
-0
-element.offsetParent.offsetLeft
-0-->
+element[0].innerText = 'Homepage' 	// here we are using index to access each element
+"Homepage"-->
