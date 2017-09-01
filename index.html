@@ -4,48 +4,81 @@
 		<title>JavaScript</title>
 	</head>
 	<body>
-
-		<input type="text" id="entry">
-		<span id="output">Start Typing</span>
+		<!-- <a href="#" id ='link'>click me</a> -->
 
 		<script>
-			var app = {};
+	    	var element = document.createElement('a');
 
-			//A shorter way to get elements
-			app.getElement = function(element){
-				return document.getElementById(element);
-			}
+			// Modify element properties
+			element.innerText = 'Google';
+			element.setAttribute('href', 'http://www.google.com');
 
-			//Get elements required
-			app.entry = app.getElement('entry');
-			app.output = app.getElement('output');
-
-			//Create event handler
-			app.entry.onkeyup = function(){
-				//console.log('worked'); // whenever a key is pressed this onkeyup function is executed
-
-				app.output.innerText = this.value; //'this' refers to app.entry 
-
-				/*innerText does not work on input type, i.e, input field doesnot have the
-				property innerText thats why we are using this.value to change the text */
-
-				/*output.innerText refers to span text(start typing) which has the id output, 
-				we are changing 'Start Typing' text to input field value. */
-			}
-		</script>
+			// Add to body
+			document.body.appendChild(element);
+	    	
+	    </script>
 	</body>
 </html>
 
+<!-- in console
+var element = document.createElement('a')  //creates specified element
+undefined
 
-<!--  in console
-app.getElement('entry')
-<input type=​"text" id=​"entry">​
+element
+<a>​</a>​
 
-app.getElement('output')
-<span id=​"output">​Start Typing​</span>​
+document.body
+<body>​
+		
 
-app.entry = app.getElement('entry')
-<input type=​"text" id=​"entry">​
+​</body>​
 
-app.entry.value
-"sssss" // value in the input field -->
+document.body.tagName
+"BODY"
+
+document.getElementById('link')
+<a href=​"#" id=​"link">​Click me​</a>​
+
+document.getElementById('link').tagName; //gives the tag name of that id
+"A" 
+
+var element = document.createElement('a')
+undefined
+
+element
+<a>​</a>​
+
+element.innerText = 'Google'
+"Google"
+
+element
+<a>​Google​</a>​
+
+element.setAttribute('href', 'http://www.google.com');
+undefined
+
+element
+<a href=​"http:​/​/​www.google.com">​Google​</a>​
+
+document.body.appendChild(element);
+<a href=​"http:​/​/​www.google.com">​Google​</a>​
+
+var box = document.createElement('div');
+undefined
+
+box.innerText = 'Hello';
+"Hello"
+
+document.body.appendChild(box);
+<div>​Hello​</div>​
+
+//another div
+var newbox = document.createElement('div');
+undefined
+
+newbox.innerHTML = '<strong>there</strong>';
+"<strong>there</strong>"
+
+document.body.appendChild(newbox);
+<div>​<strong>there</strong>​</div>​
+-->
