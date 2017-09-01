@@ -4,81 +4,54 @@
 		<title>JavaScript</title>
 	</head>
 	<body>
-		<!-- <a href="#" id ='link'>click me</a> -->
+		<div id="box">I am a box</div>
 
 		<script>
-	    	var element = document.createElement('a');
+			var box = document.getElementById('box'),
+				boxStyle = box.style; //short hand for box.style
 
-			// Modify element properties
-			element.innerText = 'Google';
-			element.setAttribute('href', 'http://www.google.com');
+			// Set using an attribute
+			box.setAttribute('style', 'width:100px; height:100px; background-color:slategrey;');
 
-			// Add to body
-			document.body.appendChild(element);
-	    	
-	    </script>
+			// Set individual properties
+			boxStyle.width = '100px';
+			boxStyle.height = '100px';
+			boxStyle.backgroundColor = 'slategrey';
+			boxStyle.padding = '10px';
+			boxStyle.color = '#fff';
+			boxStyle.border = 'solid 1px #000';
+
+			// Event handler
+			box.onclick = function(){
+				boxStyle.backgroundColor = 'red';
+			}
+		</script>
 	</body>
 </html>
 
+
 <!-- in console
-var element = document.createElement('a')  //creates specified element
-undefined
+box.style
+CSSStyleDeclaration {alignContent: "", alignItems: "", alignSelf: "", alignmentBaseline: "", all: "", …}
 
-element
-<a>​</a>​
+box.style.width = '100px';
+"100px"
 
-document.body
-<body>​
-		
+box.style.height = '100px';
+"100px"
 
-​</body>​
+box.style.background = 'slategrey';
+"slategrey"
 
-document.body.tagName
-"BODY"
+box.style.border = '1px solid #000';
+"1px solid #000"
 
-document.getElementById('link')
-<a href=​"#" id=​"link">​Click me​</a>​
+box.innerText = 'Hello I am a box';
+"Hello I am a box"
 
-document.getElementById('link').tagName; //gives the tag name of that id
-"A" 
+box.style.padding = '10px';
+"10px"
 
-var element = document.createElement('a')
-undefined
-
-element
-<a>​</a>​
-
-element.innerText = 'Google'
-"Google"
-
-element
-<a>​Google​</a>​
-
-element.setAttribute('href', 'http://www.google.com');
-undefined
-
-element
-<a href=​"http:​/​/​www.google.com">​Google​</a>​
-
-document.body.appendChild(element);
-<a href=​"http:​/​/​www.google.com">​Google​</a>​
-
-var box = document.createElement('div');
-undefined
-
-box.innerText = 'Hello';
-"Hello"
-
-document.body.appendChild(box);
-<div>​Hello​</div>​
-
-//another div
-var newbox = document.createElement('div');
-undefined
-
-newbox.innerHTML = '<strong>there</strong>';
-"<strong>there</strong>"
-
-document.body.appendChild(newbox);
-<div>​<strong>there</strong>​</div>​
--->
+box.style.color = '#fff'; 
+"#fff"
+ -->
