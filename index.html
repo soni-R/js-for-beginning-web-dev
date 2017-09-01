@@ -4,64 +4,47 @@
 		<title>JavaScript</title>
 	</head>
 	<body>
-		
-		<nav>
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="about.html">About us</a></li>
-				<li><a href="contact.html">contact us</a></li>
-			</ul>
-		</nav>
+
+		<!-- <a href="#" id="link" onclick="console.log('Clicked')">Click me</a> -->
+		<!-- <a href="#" id="link" onmouseenter="console.log('Clicked')">Click me</a> -->
+
+		<!--  Here event handlers are used inline , not good practice we have to specify
+		 in external script file or in script tags -->
+
+		<a href="#" id = 'link'>Click me</a><br>
+		<a href="#" id = 'link2'>linktoclick</a>
 
 		<script>
-			//var element = document.querySelector('nav ul li a');
-			//var element = document.querySelectorAll('nav ul li a');
+		//occlick event handler
+			var element = document.getElementById('link');
+			element.onclick = function(){
+				console.log('Clicked');
+			}
 
-			var navigation = document.querySelectorAll('nav ul li a'),
-			navigationLength = navigation.length;
+		//onmouseenter event handler
+			var element = document.getElementById('link');
+			element.onmouseenter = function(){
+				console.log('Clicked');
+			}
 
-			/*
-			if(navigation.length){
-				for(item in navigation){
-					//console.log(navigation[item]);
-					var i = navigation[item];
-					//console.log(i.text + ' - ' + i.getAttribute('href'));
-					console.log(i);
-				}
-			}*/
+		/*addEventListener does not work in internet explorer 7, 
+		solution for this is to use attachEvent method	*/
 
-			//using below for loop is the correct way of iterate over the items
+			var element = document.getElementById('link2');
+			element.addEventListener('click', function(){ /*in place of click we can use mouseenter,
+			 these are onclick and onmouseenter events, we are not using on here */
+				console.log('Clicked');
+			});
 
-			if(navigationLength){
-				for(var x = 0; x < navigationLength; x=x+1){
-					var i = navigation[x];
-					console.log(i.text + ' - ' + i.getAttribute('href'));
-					
-				}
-			}	
-		
+		//only works in IE8 and lower version
+			/*var element = document.getElementById('link2');
+			element.attachEvent('onclick' , function(){
+				console.log("attach Event");
+			}); */
+
 		</script>
 
 	</body>
 </html>
 
 
-<!-- in console
-	//First anchor tag is selected , using query selector
-element
-<a href=​"#">​Home​</a>​ 
-
-element.text
-"Home"
-
-element.innerText = 'Homepage'
-"Homepage"
-
-element 	//using querySelectorAll, all anchor tags are selected
-(3) [a, a, a]
-
-element.length 	//returns number of items
-3
-
-element[0].innerText = 'Homepage' 	// here we are using index to access each element
-"Homepage"-->
