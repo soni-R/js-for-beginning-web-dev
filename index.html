@@ -1,57 +1,45 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>JavaScript</title>
-	</head>
-	<body>
-		<div id="box">I am a box</div>
+<head>
+	<title>JavaScript</title>
+</head>
+<body>
 
-		<script>
-			var box = document.getElementById('box'),
-				boxStyle = box.style; //short hand for box.style
+	<script>
+		var app = {};
 
-			// Set using an attribute
-			box.setAttribute('style', 'width:100px; height:100px; background-color:slategrey;');
+		app.add = function(first, second){
+			return first + second;
+		};
 
-			// Set individual properties
-			boxStyle.width = '100px';
-			boxStyle.height = '100px';
-			boxStyle.backgroundColor = 'slategrey';
-			boxStyle.padding = '10px';
-			boxStyle.color = '#fff';
-			boxStyle.border = 'solid 1px #000';
+		app.increment = function(number){
+			number = number + 1;
+			return number;
+		};
 
-			// Event handler
-			box.onclick = function(){
-				boxStyle.backgroundColor = 'red';
-			}
-		</script>
-	</body>
+		app.interval = function(){
+			setInterval(function(){
+				console.log(1);
+			}, 1000);
+		};
+
+		console.log(app.add(4,5));
+		console.log(app.increment(4));
+		
+
+	</script>
+	
+</body>
 </html>
 
 
-<!-- in console
-box.style
-CSSStyleDeclaration {alignContent: "", alignItems: "", alignSelf: "", alignmentBaseline: "", all: "", …}
 
-box.style.width = '100px';
-"100px"
+<!--JsLint - A code quality tool - scans Js source code and looks for errors.
+ http://www.jslint.com -->
 
-box.style.height = '100px';
-"100px"
+ <!-- Minification - compresses the code
 
-box.style.background = 'slategrey';
-"slategrey"
+ 	- compressed code which is equivalent to above code
 
-box.style.border = '1px solid #000';
-"1px solid #000"
-
-box.innerText = 'Hello I am a box';
-"Hello I am a box"
-
-box.style.padding = '10px';
-"10px"
-
-box.style.color = '#fff'; 
-"#fff"
- -->
+ var app={};app.add=function(n,e){return n+e},app.increment=function(n){return n+=1},app.interval=function(){setInterval(
+ function(){console.log(1)},1e3)},console.log(app.add(4,5)),console.log(app.increment(4)); -->
